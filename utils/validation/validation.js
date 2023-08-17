@@ -16,6 +16,11 @@ const validateRequest = (schema) => {
   };
 };
 
+const blogSchema = Joi.object({
+  title: Joi.string().min(5).max(100).required(),
+  content: Joi.string().min(10).max(1000).required(),
+})
+
 const schemas = {
     authSchema: Joi.object({
         email: Joi.string().email().required(),
@@ -24,4 +29,4 @@ const schemas = {
     })
 }
 
-export { validateRequest, schemas };
+export { validateRequest, schemas, blogSchema };

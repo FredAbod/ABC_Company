@@ -21,6 +21,16 @@ const blogSchema = Joi.object({
   content: Joi.string().min(10).max(1000).required(),
 })
 
+const loginSchema = Joi.object({
+  username: Joi.string().min(5).max(10).required(),
+  email: Joi.string().email().required(),
+  password: Joi.string().min(8).max(25).trim().required().messages({
+    "string.pattern.base": `Password should be 8 characters and contain letters or numbers only`,
+    "string.empty": `Password cannot be empty`,
+    "any.required": `Password is required`,
+  }),
+})
+
 const schemas = {
     authSchema: Joi.object({
         email: Joi.string().email().required(),
@@ -29,4 +39,4 @@ const schemas = {
     })
 }
 
-export { validateRequest, schemas, blogSchema };
+export { validateRequest, schemas, blogSchema, loginSchema };

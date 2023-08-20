@@ -4,7 +4,8 @@ import rateLimit from "express-rate-limit";
 import xssClean from "xss-clean";
 import mongoSanitize from "express-mongo-sanitize";
 
-import userRoute from "../src/resources/user/routes/user.routes.js";
+import blogRoute from "./resources/user/routes/blog.routes.js";
+import userRoute from "./resources/user/routes/user.routes.js";
 
 const app = express();
 
@@ -36,6 +37,7 @@ app.get("/", (req, res) => {
 // Apply rate limiter middleware to endpoints matching the prefix
 app.use("/api/v1/*", limiter);
 
-app.use('/api/v1/blog', userRoute);
+app.use('/api/v1/blog', blogRoute);
+app.use('/api/v1/user', userRoute);
 
 export default app;

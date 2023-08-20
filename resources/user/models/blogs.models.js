@@ -9,6 +9,9 @@ const blogSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+    token: {
+      type: String,
+    },
   author: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User', // Reference to the User model for the author

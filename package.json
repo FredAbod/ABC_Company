@@ -9,12 +9,14 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "dotenv": "^16.0.3",
     "express": "^4.17.1",
     "express-mongo-sanitize": "^2.2.0",
     "express-rate-limit": "^6.9.0",
     "gitignore": "^0.7.0",
     "joi": "^17.9.2",
+    "jsonwebtoken": "^9.0.1",
     "mongodb": "^5.1.0",
     "mongoose": "^7.0.3",
     "morgan": "^1.10.0",

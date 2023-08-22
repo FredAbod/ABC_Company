@@ -47,11 +47,19 @@ The API is now running and can be accessed using tools like Postman or from your
 # API Endpoints
 
  ### User Routes
-* POST /api/v1/user/signup: Create a new user account.
-* POST /api/v1/user/login: Log in and receive an authentication token.
+* `POST /api/v1/user/signup:` Create a new user account.
+* `POST /api/v1/user/login:` Log in and receive an authentication token.
 
-> Blog Routes
-* GET /api/v1/blog/allblog: Get a list of all blog posts.
-* POST /api/v1/blog/create: Create a new blog post.
-* PUT /api/v1/blog/update/:blogId: Update a blog post by ID.
-* DELETE /api/v1/blog/delete/:blogId: Delete a blog post by ID.
+### Blog Routes
+* `GET /api/v1/blog/allblog:` Get a list of all blog posts.
+* `POST /api/v1/blog/create:` Create a new blog post.
+* `PUT /api/v1/blog/update/:blogId:` Update a blog post by ID.
+* `DELETE /api/v1/blog/delete/:blogId:` Delete a blog post by ID.
+
+### Authentication
+Protected routes require authentication using a JWT token. Include the token in the `Authorization` header of your requests:
+ ```
+Authorization: Bearer <your-token>
+```
+### Error Handling
+The API provides meaningful error responses for various scenarios. Make sure to check the response status and the included error message.
